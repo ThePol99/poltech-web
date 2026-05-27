@@ -103,12 +103,24 @@ a { text-decoration: none; color: inherit; }
 /* ── HERO ── */
 .hero {
   min-height: 100vh;
-  padding: 120px 24px 80px;
+  padding: 120px 24px 40px;
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   gap: 60px;
+  flex-wrap: wrap;
+}
+
+.scroll-indicator {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 20px 0 10px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
 }
 
 .hero-content { flex: 1; }
@@ -150,8 +162,8 @@ a { text-decoration: none; color: inherit; }
 
 .scroll-arrow {
   display: inline-block;
-  margin-top: 40px;
-  font-size: 1.8rem;
+  font-size: 3.5rem;
+  line-height: 1;
   color: var(--primary);
   animation: bounce 1.4s infinite;
   text-decoration: none;
