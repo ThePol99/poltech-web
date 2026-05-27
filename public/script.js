@@ -116,7 +116,8 @@ function updateMailtoLink() {
     const items = cart.map(i => `- ${i.icon} ${i.name} x${i.qty} = $${(i.price * i.qty).toLocaleString()}`).join('\n');
     body = `Hola equipo Poltech,\n\nMe interesan los siguientes productos:\n\n${items}\n\nTotal estimado: $${total.toLocaleString()}\n\nPor favor contáctenme con más información.\n\nNombre: \nTeléfono: `;
   }
-  link.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  link.href = `https://mail.google.com/mail/?view=cm&to=${encodeURIComponent(email)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  link.target = '_blank';
 }
 
 function updateFormSummary() {
