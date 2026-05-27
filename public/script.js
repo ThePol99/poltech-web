@@ -100,6 +100,23 @@ function updateCart() {
 
   totalEl.textContent = totalPrice.toLocaleString('en-US', { minimumFractionDigits: 2 });
   updateFormSummary();
+  updateMailtoLink();
+}
+
+function updateMailtoLink() {
+  const link = document.getElementById('mailto-link');
+  if (!link) return;
+  const email = 'e1751203728@uisrael.edu.ec';
+  const subject = 'Consulta de productos - Poltech';
+  let body;
+  if (cart.length === 0) {
+    body = 'Hola equipo Poltech,\n\nEstoy interesado en sus productos.\n\nNombre: \nTeléfono: ';
+  } else {
+    const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+    const items = cart.map(i => `- ${i.icon} ${i.name} x${i.qty} = $${(i.price * i.qty).toLocaleString()}`).join('\n');
+    body = `Hola equipo Poltech,\n\nMe interesan los siguientes productos:\n\n${items}\n\nTotal estimado: $${total.toLocaleString()}\n\nPor favor contáctenme con más información.\n\nNombre: \nTeléfono: `;
+  }
+  link.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
 function updateFormSummary() {
