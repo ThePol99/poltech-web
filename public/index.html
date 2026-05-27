@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poltech — Tecnología a tu medida</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="header">
+    <nav class="nav">
+      <a href="#inicio" class="logo">⚡ Poltech</a>
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <button class="cart-btn" onclick="toggleCart()">
+        🛒 <span class="cart-badge" id="cart-badge">0</span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="inicio" class="hero">
+    <div class="hero-content">
+      <div class="hero-tag">🇪🇨 Envíos a todo Ecuador</div>
+      <h1>Tecnología que <span class="highlight">transforma</span></h1>
+      <p>Computadores y periféricos de última generación para profesionales, estudiantes y gamers.</p>
+      <div class="hero-actions">
+        <a href="#productos" class="btn-primary">Ver productos</a>
+        <a href="#contacto" class="btn-secondary">Solicitar cotización</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-card-icon">🖥️</div>
+        <p>PC Gaming</p>
+        <span>desde $499</span>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon">💻</div>
+        <p>Laptops</p>
+        <span>desde $599</span>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon">🎧</div>
+        <p>Periféricos</p>
+        <span>desde $29</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS -->
+  <section id="productos" class="productos">
+    <div class="section-header">
+      <h2 class="section-title">Nuestros Productos</h2>
+      <p class="section-sub">Garantía oficial · Stock inmediato · Soporte técnico incluido</p>
+    </div>
+
+    <div class="filter-tabs">
+      <button class="tab active" onclick="filterProducts('todos', this)">Todos</button>
+      <button class="tab" onclick="filterProducts('computadores', this)">Computadores</button>
+      <button class="tab" onclick="filterProducts('perifericos', this)">Periféricos</button>
+    </div>
+
+    <div class="products-grid" id="products-grid"></div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="contacto">
+    <div class="contacto-container">
+      <div class="contacto-info">
+        <h2>¿Listo para <span class="highlight">cotizar</span>?</h2>
+        <p>Cuéntanos lo que necesitas y te respondemos en menos de 24 horas con la mejor oferta personalizada.</p>
+        <div class="info-list">
+          <div class="info-item">📧 <span>ventas@poltech.ec</span></div>
+          <div class="info-item">📞 <span>+593 02 555-1234</span></div>
+          <div class="info-item">📍 <span>Quito, Ecuador</span></div>
+          <div class="info-item">🕐 <span>Lun–Vie 8:00–18:00</span></div>
+        </div>
+      </div>
+
+      <form class="contacto-form" id="contact-form" onsubmit="submitForm(event)">
+        <h3>Formulario de contacto</h3>
+        <div id="cart-form-summary"></div>
+        <div class="form-row">
+          <input type="text" id="nombre" placeholder="Nombre completo *" required />
+          <input type="email" id="email" placeholder="Correo electrónico *" required />
+        </div>
+        <input type="tel" id="telefono" placeholder="Teléfono (opcional)" />
+        <textarea id="mensaje" rows="4" placeholder="¿En qué podemos ayudarte?"></textarea>
+        <button type="submit" class="btn-primary" id="submit-btn">
+          Enviar consulta →
+        </button>
+        <div class="form-status" id="form-status"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="logo">⚡ Poltech</div>
+        <p>Tu aliado tecnológico en Ecuador</p>
+      </div>
+      <div class="footer-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#productos">Productos</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Poltech. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- CARRITO SIDEBAR -->
+  <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+  <div class="cart-sidebar" id="cart-sidebar">
+    <div class="cart-header">
+      <h3>🛒 Tu carrito</h3>
+      <button class="cart-close" onclick="toggleCart()">✕</button>
+    </div>
+    <div class="cart-items" id="cart-items">
+      <div class="cart-empty">
+        <p>🛒</p>
+        <p>Tu carrito está vacío</p>
+      </div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">Total: <strong>$<span id="cart-total">0.00</span></strong></div>
+      <button class="btn-primary" onclick="goToContact()">Solicitar cotización</button>
+      <button class="btn-ghost" onclick="clearCart()">Vaciar carrito</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

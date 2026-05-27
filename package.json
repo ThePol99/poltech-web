@@ -1,0 +1,12 @@
+{
+  "name": "poltech-web",
+  "version": "1.0.0",
+  "description": "Poltech - Tienda de computadores y periféricos",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
