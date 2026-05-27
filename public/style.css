@@ -148,6 +148,20 @@ a { text-decoration: none; color: inherit; }
 
 .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
 
+.scroll-arrow {
+  display: inline-block;
+  margin-top: 40px;
+  font-size: 1.8rem;
+  color: var(--primary);
+  animation: bounce 1.4s infinite;
+  text-decoration: none;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); opacity: 0.5; }
+  50% { transform: translateY(10px); opacity: 1; }
+}
+
 .hero-visual {
   flex-shrink: 0;
   display: flex;
@@ -383,6 +397,8 @@ a { text-decoration: none; color: inherit; }
 }
 
 .info-item span { color: var(--text); }
+.info-item a { color: var(--text); transition: color 0.2s; }
+.info-item a:hover { color: var(--primary); }
 
 .contacto-form h3 {
   font-size: 1.2rem;
