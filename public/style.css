@@ -469,6 +469,51 @@ a { text-decoration: none; color: inherit; }
   font-size: 0.85rem;
 }
 
+/* ── QR ── */
+.qr-section {
+  padding: 60px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.qr-container {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 40px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.qr-text h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.qr-text p {
+  color: var(--text-muted);
+  max-width: 400px;
+}
+
+.qr-code {
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.qr-code img {
+  border-radius: 12px;
+  display: block;
+}
+
+.qr-code p {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-top: 8px;
+}
+
 /* ── FOOTER ── */
 .footer {
   padding: 60px 24px 24px;
